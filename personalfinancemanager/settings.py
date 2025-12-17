@@ -42,9 +42,10 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 # ]
 
 ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    '.hf.space',  # <--- REQUIRED for Hugging Face
+    # 'localhost',
+    # '127.0.0.1',
+    # '.hf.space',  # <--- REQUIRED for Hugging Face
+    '*',  # <--- For testing purposes only. Remove in production.
 ]
 
 # Add this NEW section right below ALLOWED_HOSTS
