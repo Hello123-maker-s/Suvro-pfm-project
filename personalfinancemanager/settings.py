@@ -42,15 +42,13 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 # ]
 
 ALLOWED_HOSTS = [
-    # 'localhost',
-    # '127.0.0.1',
-    # '.hf.space',  # <--- REQUIRED for Hugging Face
-    '*',  # <--- For testing purposes only. Remove in production.
+    'localhost',
+    '127.0.0.1',
+    '.hf.space',  # <--- REQUIRED for Hugging Face Space      
 ]
 
 
 # Add this NEW section right below ALLOWED_HOSTS
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.hf.space',

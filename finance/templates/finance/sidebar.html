@@ -8,7 +8,7 @@
   <a href="{% url 'add_expense' %}" class={% if request.resolver_match.url_name == 'add_expense' %}active{% endif %} data-tooltip="Add Expense"><span>💸</span><span class="label">Add Expense</span></a>
   <a href="{% url 'recurring_income' %}" class={% if request.resolver_match.url_name == 'recurring_income' %}active{% endif %} data-tooltip="Recurring Income"><span>🔁</span><span class="label">Recurring Income</span></a>
   <a href="{% url 'recurring_expense' %}" class={% if request.resolver_match.url_name == 'recurring_expense' %}active{% endif %} data-tooltip="Recurring Expense"><span>⏱️</span><span class="label">Recurring Expense</span></a>
-  
+  <a href="{% url 'income_history' %}" class={% if request.resolver_match.url_name == 'income_history' %}active{% endif %} data-tooltip="Income History"><span>📜</span><span class="label">Income History</span></a>
   <a href="{% url 'expense_log' %}" class={% if request.resolver_match.url_name == 'expense_log' %}active{% endif %} data-tooltip="Expense Log"><span>💳</span><span class="label">Expense Log</span></a>
   
 </div>
