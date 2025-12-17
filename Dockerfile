@@ -1,5 +1,5 @@
 # Use Python 3.10
-FROM python:3.10
+FROM python:3.14
 
 # 1. Setup a non-root user (Hugging Face Requirement)
 RUN useradd -m -u 1000 user
