@@ -48,7 +48,10 @@ ALLOWED_HOSTS = [
     '*',  # <--- For testing purposes only. Remove in production.
 ]
 
+
 # Add this NEW section right below ALLOWED_HOSTS
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 CSRF_TRUSTED_ORIGINS = [
     'https://*.hf.space',
 ]
