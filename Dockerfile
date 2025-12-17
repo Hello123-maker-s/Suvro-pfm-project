@@ -20,7 +20,7 @@ COPY --chown=user . .
 # 5. Fix Static Files for Whitenoise
 # Create the directory and make sure the user owns it
 RUN mkdir -p staticfiles
-RUN python manage.py collectstatic --no-input
+RUN DATABASE_URL="sqlite:///dummy.db" SECRET_KEY="dummy-key-for-build" python manage.py collectstatic --no-input
 
 # 6. Expose the Hugging Face Port
 EXPOSE 7860
