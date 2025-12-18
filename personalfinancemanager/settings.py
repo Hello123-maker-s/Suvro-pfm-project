@@ -70,7 +70,8 @@ INSTALLED_APPS = [
     'savings',
     'investment',
     'core',
-    'ml'
+    'ml',
+    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -186,11 +187,19 @@ LOGIN_URL = 'login'
 # EMAIL_USE_TLS = True
 # EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 # EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# ==========================================
+# EMAIL SETTINGS (BREVO API)
+# ==========================================
+
+# Use the Anymail backend (Sends via HTTP, which is NOT blocked)
+EMAIL_BACKEND = "anymail.backends.brevo.EmailBackend"
+
+# Connect your API Key (Make sure you added BREVO_API_KEY to HF Secrets)
+ANYMAIL = {
+    "BREVO_API_KEY": os.environ.get("BREVO_API_KEY"),
+}
+
+# CRITICAL: This email must be the one you Verified in Brevo's "Senders & IP"
+# If this doesn't match, Brevo will reject the email.
+DEFAULT_FROM_EMAIL = "floorcharlie61@gmail.com"  # <--- CHANGE THIS to your real email
+SERVER_EMAIL = "floorcharlie61@gmail.com"        # <--- CHANGE THIS to your real email
