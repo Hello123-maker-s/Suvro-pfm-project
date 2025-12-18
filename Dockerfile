@@ -27,4 +27,4 @@ EXPOSE 7860
 
 # 7. Start Command
 # Using 0.0.0.0:7860 binding
-CMD ["gunicorn", "personalfinancemanager.wsgi:application", "--bind", "0.0.0.0:7860"]
+CMD ["gunicorn", "personalfinancemanager.wsgi:application", "--bind", "0.0.0.0:7860", "--workers", "2", "--timeout", "120"]
