@@ -1,6 +1,9 @@
 # Use Python 3.11
 FROM python:3.11
 
+# ADD THIS LINE TO FORCE LOGS TO APPEAR:
+ENV PYTHONUNBUFFERED=1
+
 # 1. Setup a non-root user (Hugging Face Requirement)
 RUN useradd -m -u 1000 user
 USER user

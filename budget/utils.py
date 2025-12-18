@@ -170,4 +170,5 @@ def check_budget_warnings(request, expense):
                     messages.info(request, "Budget exceeded but no user email configured.")
                     
         except Exception as e:
-            print(f"Error in budget calculation: {e}")
+            # flush=True forces the log to appear instantly
+            print(f"❌ EMAIL FAILURE LOG: {e}", flush=True)
