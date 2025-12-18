@@ -155,7 +155,6 @@ def upload_income_csv(request):
 
     csv_file = request.FILES.get("csv_file")
 
-    # File size limit (1MB)
     if csv_file.size > 1048576:
         messages.error(request, "File too large! Please upload a CSV under 1 MB.")
         return redirect("add_income")

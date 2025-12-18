@@ -6,23 +6,9 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
-# from pathlib import Path
-
-# # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# BASE_DIR = Path(__file__).resolve().parent.parent
-
-
 # # Quick-start development settings - unsuitable for production
 # # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-_kic+79ru^*4r(2v)s4dwe$4p!7ry!*9g+&d*-j(&%cigk6)cf'
-
-# # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-
-# ALLOWED_HOSTS = []
 import os
 from pathlib import Path
 
@@ -32,11 +18,6 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "unsafe-dev-key")
 
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-# ALLOWED_HOSTS = [
-#     "localhost",
-#     "127.0.0.1",
-#     ".onrender.com",
-# ]
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -44,8 +25,6 @@ ALLOWED_HOSTS = [
     '.hf.space',  # <--- REQUIRED for Hugging Face Space      
 ]
 
-
-# Add this NEW section right below ALLOWED_HOSTS
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.hf.space',
@@ -107,16 +86,6 @@ WSGI_APPLICATION = 'personalfinancemanager.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'pfm_db',
-#         'USER': 'pfm_user',
-#         'PASSWORD': 'Football2026',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
 import dj_database_url
 
 DATABASE_URL = os.environ.get("DATABASE_URL")
@@ -177,26 +146,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = 'login'
 
-# SMTP settings
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
-# EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
-# ==========================================
-# EMAIL SETTINGS (BREVO API)
-# ==========================================
-
-# Use the Anymail backend (Sends via HTTP, which is NOT blocked)
 EMAIL_BACKEND = "anymail.backends.brevo.EmailBackend"
 
-# Connect your API Key (Make sure you added BREVO_API_KEY to HF Secrets)
 ANYMAIL = {
     "BREVO_API_KEY": os.environ.get("BREVO_API_KEY"),
 }
 
-# CRITICAL: This email must be the one you Verified in Brevo's "Senders & IP"
-# If this doesn't match, Brevo will reject the email.
-DEFAULT_FROM_EMAIL = "floorcharlie61@gmail.com"  # <--- CHANGE THIS to your real email
-SERVER_EMAIL = "floorcharlie61@gmail.com"        # <--- CHANGE THIS to your real email
+DEFAULT_FROM_EMAIL = "floorcharlie61@gmail.com"  
+SERVER_EMAIL = "floorcharlie61@gmail.com"        
