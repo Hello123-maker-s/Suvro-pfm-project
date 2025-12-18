@@ -167,8 +167,8 @@ def upload_income_csv(request):
     try:
         file_data = csv_file.read().decode("utf-8").splitlines()
         
-        if len(file_data) > 551:
-            messages.error(request, "❌ Upload failed: The file contains more than 550 rows. Please split it into smaller files.")
+        if len(file_data) > 501:
+            messages.error(request, "❌ Upload failed: The file contains more than 500 rows. Please split it into smaller files.")
             return redirect("add_income")
         
         reader = csv.DictReader(file_data)
@@ -257,8 +257,8 @@ def upload_expense_csv(request):
     try:
         file_data = csv_file.read().decode("utf-8").splitlines()
         
-        if len(file_data) > 551:
-            messages.error(request, "❌ Upload failed: The file contains more than 550 rows. Please split it into smaller files.")
+        if len(file_data) > 501:
+            messages.error(request, "❌ Upload failed: The file contains more than 500 rows. Please split it into smaller files.")
             return redirect("add_expense")
         
         reader = csv.DictReader(file_data)
@@ -377,8 +377,8 @@ def upload_bank_statement(request):
     try:
         file_data = csv_file.read().decode("utf-8", errors="ignore").splitlines()
         
-        if len(file_data) > 551:
-            messages.error(request, "❌ Upload failed: The file contains more than 550 rows. Please split it into smaller files.")
+        if len(file_data) > 501:
+            messages.error(request, "❌ Upload failed: The file contains more than 500 rows. Please split it into smaller files.")
             return redirect("dashboard")
         
         reader = csv.DictReader(file_data)
