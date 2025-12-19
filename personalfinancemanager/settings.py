@@ -152,5 +152,5 @@ ANYMAIL = {
     "BREVO_API_KEY": os.environ.get("BREVO_API_KEY"),
 }
 
-DEFAULT_FROM_EMAIL = "floorcharlie61@gmail.com"  
-SERVER_EMAIL = "floorcharlie61@gmail.com"        
+DEFAULT_FROM_EMAIL = "DEFAULT_EMAIL"  
+SERVER_EMAIL = "DEFAULT_EMAIL"        
