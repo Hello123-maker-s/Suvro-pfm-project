@@ -85,7 +85,7 @@ This project is developed as part of the **Master of Computer Applications (MCA)
 
 ```text
 personal-finance-manager/
-├── accounts/
+├── accounts/                     # User auth & profiles
 │   ├── migrations/
 │   ├── admin.py
 │   ├── apps.py
@@ -94,7 +94,7 @@ personal-finance-manager/
 │   ├── urls.py
 │   └── views.py
 │
-├── finance/
+├── finance/                      # Income & expenses
 │   ├── migrations/
 │   ├── admin.py
 │   ├── middlewares.py
@@ -102,49 +102,49 @@ personal-finance-manager/
 │   ├── urls.py
 │   └── views.py
 │
-├── budget/
+├── budget/                       # Budget planning
 │   ├── migrations/
 │   ├── admin.py
 │   ├── models.py
 │   ├── urls.py
 │   └── views.py
 │
-├── savings/
+├── savings/                      # Savings goals
 │   ├── migrations/
 │   ├── admin.py
 │   ├── models.py
 │   ├── urls.py
 │   └── views.py
 │
-├── investment/
+├── investment/                   # Investment tracking
 │   ├── migrations/
 │   ├── admin.py
 │   ├── models.py
 │   ├── urls.py
 │   └── views.py
 │
-├── ml/
+├── ml/                           # ML modes
 │   ├── models/
 │   ├── expense_classifier.py
 │   ├── synthetic_dataset.csv
 │   └── utils.py
 │
-├── core/
+├── core/                         # Shared utilities
 │   ├── context_processors.py
 │   ├── urls.py
 │   └── views.py
 │
-├── personalfinancemanager/
+├── personalfinancemanager/        # Django config
 │   ├── settings.py
 │   ├── urls.py
 │   ├── asgi.py
 │   └── wsgi.py
 │
-├── templates/
-├── static/
-├── staticfiles/
-├── manage.py
-├── requirements.txt
-├── Procfile
-└── README.md
+├── templates/                     # HTML templates
+├── static/                        # Static assets
+├── staticfiles/                   # Collected static files
+├── manage.py                      # Django entry point
+├── requirements.txt               # Dependencies
+├── Procfile                       # Deployment config
+└── README.md                      # Documentation
 
