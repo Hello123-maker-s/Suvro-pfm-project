@@ -81,9 +81,11 @@ This project is developed as part of the **Master of Computer Applications (MCA)
 
 ## 🗂️ Project Structure
 
+## Project Structure
+
+```text
 personal-finance-manager/
-│
-├── accounts/                     # User authentication & profiles
+├── accounts/
 │   ├── migrations/
 │   ├── admin.py
 │   ├── apps.py
@@ -92,70 +94,57 @@ personal-finance-manager/
 │   ├── urls.py
 │   └── views.py
 │
-├── finance/                      # Core income & expense management
+├── finance/
 │   ├── migrations/
 │   ├── admin.py
-│   ├── middlewares.py            # Custom balance protection logic
+│   ├── middlewares.py
 │   ├── models.py
 │   ├── urls.py
 │   └── views.py
 │
-├── budget/                       # Budget planning & alerts
-│   ├── migrations/
-│   ├── admin.py
-│   ├── models.py
-│   ├── urls.py
-│   └── views.py
-│
-├── savings/                      # Savings goals tracking
+├── budget/
 │   ├── migrations/
 │   ├── admin.py
 │   ├── models.py
 │   ├── urls.py
 │   └── views.py
 │
-├── investment/                   # Investment portfolio management
+├── savings/
 │   ├── migrations/
 │   ├── admin.py
 │   ├── models.py
 │   ├── urls.py
 │   └── views.py
 │
-├── ml/                           # Machine Learning module
-│   ├── models/                   # Trained ML models (.pkl)
-│   ├── expense_classifier.py     # Expense classification logic
-│   ├── synthetic_dataset.csv     # Training dataset
+├── investment/
+│   ├── migrations/
+│   ├── admin.py
+│   ├── models.py
+│   ├── urls.py
+│   └── views.py
+│
+├── ml/
+│   ├── models/
+│   ├── expense_classifier.py
+│   ├── synthetic_dataset.csv
 │   └── utils.py
 │
-├── core/                         # Dashboard & shared utilities
-│   ├── context_processors.py     # Global template context
+├── core/
+│   ├── context_processors.py
 │   ├── urls.py
 │   └── views.py
 │
-├── personalfinancemanager/       # Django project configuration
-│   ├── __init__.py
+├── personalfinancemanager/
+│   ├── settings.py
+│   ├── urls.py
 │   ├── asgi.py
-│   ├── settings.py               # Main settings file
-│   ├── urls.py                   # Root URL configuration
 │   └── wsgi.py
 │
-├── templates/                    # HTML templates
-│   ├── accounts/
-│   ├── finance/
-│   ├── budget/
-│   ├── savings/
-│   ├── investment/
-│   └── core/
-│
-├── static/                       # Static assets (CSS, JS, Images)
-│   ├── css/
-│   ├── js/
-│   └── images/
-│
-├── staticfiles/                  # Collected static files (production)
-│
-├── manage.py                     # Django management script
-├── requirements.txt              # Python dependencies
-├── runtime.txt                   # Python version for deployment
-├── Procfile                      # Deployment start command
-└── README.md                     # Project documentation
+├── templates/
+├── static/
+├── staticfiles/
+├── manage.py
+├── requirements.txt
+├── Procfile
+└── README.md
+
