@@ -145,6 +145,6 @@ personal-finance-manager/
 ├── staticfiles/                   # Collected static files
 ├── manage.py                      # Django entry point
 ├── requirements.txt               # Dependencies
-├── Procfile                       # Deployment config
+├── Dockerfile                     # Docker build config
 └── README.md                      # Documentation
 
