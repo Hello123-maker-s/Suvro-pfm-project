@@ -32,8 +32,8 @@ This project is developed as part of the **Master of Computer Applications (MCA)
 
 ### 📈 Reports & Dashboard
 - Interactive dashboard
-- Monthly expense breakdown
-- Category-wise spending analysis
+- Monthly expense breakdown 
+- Category-wise spending analysis 
 - Visual charts and summaries
 
 ### 🤖 AI / ML Income/Expense Classifier
@@ -81,17 +81,81 @@ This project is developed as part of the **Master of Computer Applications (MCA)
 
 ## 🗂️ Project Structure
 
-personalfinancemanager/
+personal-finance-manager/
 │
-├── accounts/ # User authentication
-├── finance/ # Core finance logic
-├── budget/ # Budget management
-├── savings/ # Savings module
-├── investment/ # Investment tracking
-├── ml/ # Machine Learning module
-├── core/ # Dashboard & utilities
+├── accounts/                     # User authentication & profiles
+│   ├── migrations/
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── urls.py
+│   └── views.py
 │
-├── templates/ # HTML templates
-├── static/ # Static assets
-├── manage.py
-└── requirements.txt
+├── finance/                      # Core income & expense management
+│   ├── migrations/
+│   ├── admin.py
+│   ├── middlewares.py            # Custom balance protection logic
+│   ├── models.py
+│   ├── urls.py
+│   └── views.py
+│
+├── budget/                       # Budget planning & alerts
+│   ├── migrations/
+│   ├── admin.py
+│   ├── models.py
+│   ├── urls.py
+│   └── views.py
+│
+├── savings/                      # Savings goals tracking
+│   ├── migrations/
+│   ├── admin.py
+│   ├── models.py
+│   ├── urls.py
+│   └── views.py
+│
+├── investment/                   # Investment portfolio management
+│   ├── migrations/
+│   ├── admin.py
+│   ├── models.py
+│   ├── urls.py
+│   └── views.py
+│
+├── ml/                           # Machine Learning module
+│   ├── models/                   # Trained ML models (.pkl)
+│   ├── expense_classifier.py     # Expense classification logic
+│   ├── synthetic_dataset.csv     # Training dataset
+│   └── utils.py
+│
+├── core/                         # Dashboard & shared utilities
+│   ├── context_processors.py     # Global template context
+│   ├── urls.py
+│   └── views.py
+│
+├── personalfinancemanager/       # Django project configuration
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py               # Main settings file
+│   ├── urls.py                   # Root URL configuration
+│   └── wsgi.py
+│
+├── templates/                    # HTML templates
+│   ├── accounts/
+│   ├── finance/
+│   ├── budget/
+│   ├── savings/
+│   ├── investment/
+│   └── core/
+│
+├── static/                       # Static assets (CSS, JS, Images)
+│   ├── css/
+│   ├── js/
+│   └── images/
+│
+├── staticfiles/                  # Collected static files (production)
+│
+├── manage.py                     # Django management script
+├── requirements.txt              # Python dependencies
+├── runtime.txt                   # Python version for deployment
+├── Procfile                      # Deployment start command
+└── README.md                     # Project documentation
